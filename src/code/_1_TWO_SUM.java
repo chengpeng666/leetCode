@@ -38,20 +38,19 @@ public class _1_TWO_SUM {
             System.out.println(i);
         }
     }
-
-}
-
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> map = new HashMap<>(16);
-        int i = 0;
-        for (int num : nums) {
-            if(map.containsKey(target-num)){
-                return new int[]{i,map.get(target-num)};
+    static class Solution {
+        public int[] twoSum(int[] nums, int target) {
+            Map<Integer,Integer> map = new HashMap<>(16);
+            int i = 0;
+            for (int num : nums) {
+                if(map.containsKey(target-num)){
+                    return new int[]{i,map.get(target-num)};
+                }
+                map.put(num,i);
+                i++;
             }
-            map.put(num,i);
-            i++;
+            throw new RuntimeException("test");
         }
-        throw new RuntimeException("test");
     }
 }
+
